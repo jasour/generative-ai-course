@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Course: Introduction to Generative AI</title>
+  <title>Introduction to Generative AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -13,40 +13,24 @@
     h1, h2 {
       color: #2c3e50;
     }
-    .accordion {
-      margin-top: 20px;
-    }
-    .accordion-item {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
       border-radius: 5px;
-    }
-    .accordion-header {
-      background-color: #f7f7f7;
-      padding: 10px;
-      cursor: pointer;
       font-weight: bold;
     }
-    .accordion-content {
-      display: none;
-      padding: 10px;
-      background-color: #fafafa;
+    ul {
+      margin-left: 20px;
+      margin-bottom: 30px;
     }
-    a {
-      color: #3498db;
-      text-decoration: none;
+    li {
+      margin-bottom: 8px;
     }
   </style>
-  <script>
-    function toggleContent(id) {
-      var content = document.getElementById(id);
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    }
-  </script>
 </head>
 <body>
 
@@ -54,33 +38,52 @@
 
 <p>This course explores the foundational and advanced topics in generative AI, including VAEs, GANs, Diffusion Models, and Transformers. It provides both theoretical insights and hands-on coding experience.</p>
 
-<h2>Schedule and Materials</h2>
+<!-- Course Slides Button -->
+<a href="assets/slides/CourseSlides.pdf" target="_blank" class="button">📄 View Full Course Slides</a>
 
-<div class="accordion">
+<h2>Generative AI - Algorithms</h2>
+<ul>
+  <li>Flow Models</li>
+  <li>Ordinary Differential Equation (ODE)-based Flow Models</li>
+  <li>Denoising Diffusion Models (DDM)</li>
+  <li>Stochastic Differential Equation (SDE)-based Denoising Diffusion Models</li>
+  <li>Autoencoders and Variational Autoencoders (VAEs)</li>
+  <li>Latent Space Diffusion Models</li>
+  <li>Autoregressive Models</li>
+  <li>Generative Adversarial Networks (GANs)</li>
+</ul>
 
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleContent('week1')">Week 1: Introduction to Generative Models</div>
-    <div class="accordion-content" id="week1">
-      <ul>
-        <li><a href="assets/slides/week1.pdf" target="_blank">Slides</a></li>
-        <li><a href="assets/code/week1.zip" target="_blank">Code</a></li>
-      </ul>
-    </div>
-  </div>
+<h2>Generative AI - Architectures</h2>
+<ul>
+  <li>Multilayer Perceptron (MLP)</li>
+  <li>Training and Loss Functions Types</li>
+  <li>Backpropagation Algorithm</li>
+  <li>Stochastic Gradient Descent (SGD) and Adam Optimizer</li>
+  <li>Common Training Issues, Regularization in Deep Learning, and Scaling Laws</li>
+  <li>Generative AI Input, Output, and Layer Types</li>
+  <li>Convolutional Neural Network (CNN)</li>
+  <li>PixelCNN</li>
+  <li>U-Net Denoising Model</li>
+  <li>Recurrent Neural Networks (RNN)</li>
+  <li>LSTM (Long Short-Term Memory)</li>
+  <li>GRU (Gated Recurrent Unit)</li>
+  <li>Transformers: Multi-Head, Self, and Cross Attention</li>
+  <li>Diffusion Transformers (DiT)</li>
+  <li>Vision Transformers (ViTs)</li>
+  <li>Attention-Based U-Net</li>
+  <li>Multimodal Models</li>
+  <li>Foundation Models</li>
+</ul>
 
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleContent('week2')">Week 2: Variational Autoencoders (VAEs)</div>
-    <div class="accordion-content" id="week2">
-      <ul>
-        <li><a href="assets/slides/week2.pdf" target="_blank">Slides</a></li>
-        <li><a href="assets/code/week2.zip" target="_blank">Code</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Add more weeks here -->
-
-</div>
+<h2>Appendices</h2>
+<ul>
+  <li>Key Differential Equations in Generative AI</li>
+  <li>Fine-tuning Large Language Models</li>
+  <li>Deep Reinforcement Learning - Key Concepts and Summary (PG, VPG, PPO, DDPG, TD3, SAC)</li>
+  <li>Reinforcement Learning from Human Feedback (RLHF) and Imitation Learning</li>
+  <li>Adversarial Training, Robustness in Language Models, and Language Models Evaluation</li>
+  <li>Python Libraries for Generative AI</li>
+</ul>
 
 </body>
 </html>
