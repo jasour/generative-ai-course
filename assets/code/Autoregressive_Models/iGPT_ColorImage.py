@@ -1,3 +1,13 @@
+# https://github.com/rll/deepul/tree/master/homeworks/hw1
+
+# Autoregressive Transformer on Color Images
+
+# Download and load up the starter code.
+# if [ -d deepul ]; then rm -Rf deepul; fi
+# git clone https://github.com/rll/deepul.git
+# pip install ./deepul
+# pip install scikit-learn
+
 """"
 Now, implement an iGPT that models color. In order to reduce the length of token sequences, iGPT models each RGB pixel as a single token. This effectively reduces the context length from HWC to just H*W. iGPT does this through a k-means clustering approach. Because our images only each can only take on 4 values (2 bits) per channel, we can represent each pixel with 64 values (6 bits). Convert the dataset into an image of tokens and train iGPT on the colored shapes and MNIST dataset.
 
