@@ -1,3 +1,7 @@
+# https://diffusion.csail.mit.edu/
+# “Generative AI With Stochastic Differential Equations” MIT, 6.S184/6.S975, IAP 2025.
+# U-Net SDE-based Diffusion
+
 from abc import ABC, abstractmethod
 from typing import Optional, List, Type, Tuple, Dict
 import math
