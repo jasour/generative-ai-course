@@ -3,19 +3,16 @@ import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
-# ------------------------- Generate 2D Sample Dataset ----------------------------
-def generate_2d_function_dataset(num_samples=1000):
-    x = torch.rand(num_samples, 2) * 4 * torch.pi - 2 * torch.pi  # Range: [-2π, 2π]
-    y = torch.sin(x[:, 0]) + torch.cos(x[:, 1])
-    return x, y.unsqueeze(1)  # Make y shape [N, 1] for regression
 
 # ------------------------- Training Function -------------------------------------
 def train(model, batch_size, num_epochs, learning_rate):
    
-    # Generate dataset
-    x, y = generate_2d_function_dataset(num_samples=5000)
-    dataset = torch.utils.data.TensorDataset(x, y) # Create a dataset from tensors x and y
-    train_loader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    # Generate 2D Sample Dataset
+    num_samples=5000
+    x = torch.rand(num_samples, 2) * 4 * torch.pi - 2 * torch.pi  # Range: [-2π, 2π]
+    y = torch.sin(x[:, 0]) + torch.cos(x[:, 1])
+    dataset = torch.utils.data.TensorDataset(x, y.unsqueeze(1) ) # This creates a PyTorch-compatible dataset object.  dataset[i] → (input_tensor, label_tensor) # y.unsqueeze(1): Make y shape [N, 1] required for PyTorch loss functions
+    train_loader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True) # train_loader yields batches of data, each of the form: (inputs, labels). len(train_loader) → 78. Each batch: (batch_size, 2) inputs and (batch_size, 1) labels.
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
  
@@ -30,6 +27,7 @@ def train(model, batch_size, num_epochs, learning_rate):
             optimizer.step()
 
         print(f"Epoch [{epoch + 1}/{num_epochs}] Loss: {loss.item():.4f}")
+
 
 # ------------------------- Model Definition -------------------------------------
 device = torch.device("mps")
@@ -56,3 +54,4 @@ plt.title("Learned Approximation of y = sin(x1) + cos(x2)")
 plt.xlabel("x1")
 plt.ylabel("x2")
 plt.show()
+
